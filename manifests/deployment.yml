@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: wetdogspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wetdogspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: wetdogspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: wetdogspipelinesjavascriptdocker 
+          image: dmddevacr.azurecr.io/wetdogspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
